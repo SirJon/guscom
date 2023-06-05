@@ -1,12 +1,12 @@
 import Header from "./Header/Header";
-import Root from "@/pages/Root/Root";
+import Root from "@/components/Root/Root";
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="main">
         <Root />
         <Outlet />
       </main>

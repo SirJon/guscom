@@ -1,0 +1,33 @@
+.moderators{
+  padding: 0 50px 0 20px;
+  max-width: 1000px;
+}
+
+.moderators__title{
+  margin: 40px 0;
+}
+.moderators__pagination {
+  button,
+  div {
+    color: $white;
+  }
+  .MuiPaginationItem-previousNext{
+    border: 1px solid #fff;
+  }
+  .Mui-selected{
+    background-color: $red !important;
+  }
+}
+
+.moderators__wrapper--nav{
+  display: grid;
+  grid-template-columns: 350px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.moderators__button{
+  @include button-red;
+  padding: 12px 25px;
+}

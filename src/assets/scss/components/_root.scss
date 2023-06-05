@@ -1,0 +1,32 @@
+.root {
+  background: $grey;
+  display: flex;
+  flex-direction: column;
+}
+
+.root__list{
+  @include reset-list;
+}
+
+.root__item{
+  display: flex;
+  &--activ {
+    position: relative;
+    background: $activ;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: $white
+    }
+  }
+}
+
+.root__link{
+  padding: 10px 35px;
+ width: 100%;
+  @include link;
+}

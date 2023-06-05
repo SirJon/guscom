@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: $black;
+  color: $white;
+}
+
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}

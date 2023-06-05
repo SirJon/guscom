@@ -1,0 +1,27 @@
+.search {
+  position: relative;
+  display: flex;
+}
+
+.search__input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid $activ;
+  border-radius: 5px;
+  padding: 12px 10px;
+  padding-right: 40px;
+  color: $white;
+  &:focus {
+    & + .search__icon {
+      visibility: hidden;
+    }
+  }
+}
+
+.search__icon {
+  color: $white;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+}

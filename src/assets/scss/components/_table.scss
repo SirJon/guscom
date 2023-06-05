@@ -1,0 +1,47 @@
+.table {
+  background: $grey;
+  padding: 20px 10px;
+  border-radius: 5px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.table__body{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.table__line{
+  display: grid;
+  grid-template-columns: 75px 250px 140px 170px;
+  width: 100%;
+}
+
+.table__data{
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.table__image{
+  border-radius: 15px;
+  width: 40px;
+  height: 25px;
+}
+
+.table__button{
+  @include button-red;
+  padding: 5px 35px 5px 20px;
+  position: relative;
+}
+
+.table__icon--button{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+  width: 17px !important;
+  height: 17px !important;
+  color: $red;
+}
