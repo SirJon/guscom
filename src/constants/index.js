@@ -5,3 +5,10 @@ export const STATUS = {
 }
 
 export const SIZE_TABLE = 5;
+
+export const USER_STATUS = {
+  status: {
+    login: "login",
+    logout: "logout",
+  },
+}

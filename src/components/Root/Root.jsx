@@ -1,15 +1,17 @@
 import clsx from 'clsx';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { ROOT } from "@/constants/root";
 import { useLocation } from 'react-router-dom';
 
-const Root = () => {
+import Badge from '@mui/material/Badge';
 
+const Root = () => {
+  const { roots } = useSelector(state => state.root)
   const location = useLocation();
   return (
     <nav className='root'>
       <ul className='root__list'>
-        {ROOT.map(it => (
+        {roots.map(it => (
           <li
             className={clsx({
               ["root__item"]: true,
@@ -17,12 +19,17 @@ const Root = () => {
             })}
             key={it.url}
           >
-            <Link
-              className="root__link"
-              to={it.url}
+            <Badge
+              className='root__badge'
+              badgeContent={it.badge}
             >
-              {it.label}
-            </Link>
+              <Link
+                className="root__link"
+                to={it.url}
+              >
+                {it.label}
+              </Link>
+            </Badge>
           </li>
         ))}
       </ul>

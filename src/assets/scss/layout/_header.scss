@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   background: $grey;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   padding: 20px;
   padding-right: 200px;
 }
@@ -21,6 +21,7 @@
 
 .header__button--refresh{
   @include button-red;
+  font-size: 14px;
   padding: 8px 24px;
 }
 

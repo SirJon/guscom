@@ -6,6 +6,7 @@
 
 .root__list {
   @include reset-list;
+  padding-top: 5px;
 }
 
 .root__item {
@@ -19,14 +20,25 @@
       left: 0;
       top: 0;
       height: 100%;
-      width: 3px;
+      width: 4px;
       background: $white;
     }
   }
 }
 
 .root__link {
-  padding: 15px 35px;
+  padding: 20px 40px;
+  padding-right: 95px;
   width: 100%;
   @include link;
+}
+
+.root__badge{
+  width: 100%;
+  .MuiBadge-badge{
+    top: 50%;
+    right: 30px;
+    color: $black;
+    background: $white;
+  }
 }
