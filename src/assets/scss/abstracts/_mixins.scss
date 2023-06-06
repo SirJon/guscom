@@ -9,6 +9,13 @@
   list-style: none;
 }
 
+@mixin button-reset {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 @mixin button-red {
   background: transparent;
   border: 1px solid $red;
