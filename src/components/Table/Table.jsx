@@ -4,7 +4,7 @@ import { SIZE_TABLE } from "@/constants";
 const Table = ({ data = [], page = 1, size = SIZE_TABLE }) => {
   return (
     <table className="table">
-      <thead>
+      <thead className="table__head">
         <tr className="table__line">
           <th></th>
           <th>Ф.И.О</th>

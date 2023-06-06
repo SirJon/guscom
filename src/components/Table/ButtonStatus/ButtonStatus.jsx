@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { useState } from 'react';
 import { useDispatch } from "react-redux";
 
@@ -8,7 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import { STATUS } from "@/constants/index";
 
-const ButtonStatus = ({ id }) => {
+const ButtonStatus = ({ id, status }) => {
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -23,7 +24,7 @@ const ButtonStatus = ({ id }) => {
     handleClose();
   }
   return (
-    <div>
+    <>
       <button
         onClick={handleClick}
         className='table__button'
@@ -35,12 +36,22 @@ const ButtonStatus = ({ id }) => {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+        className='table__menu'
       >
         {Object.keys(STATUS).map(it => (
-          <MenuItem onClick={() => handlerItem(it)} key={it}>{it}</MenuItem>
+          <MenuItem
+            className={clsx({
+              ["table__item-menu"]: true,
+              ["table__item-menu--activ"]: status === STATUS[`${it}`],
+            })}
+            onClick={() => handlerItem(it)}
+            key={it}
+          >
+            {it}
+          </MenuItem>
         ))}
       </Menu>
-    </div>
+    </>
   )
 }
 

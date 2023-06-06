@@ -4,11 +4,11 @@
   flex-direction: column;
 }
 
-.root__list{
+.root__list {
   @include reset-list;
 }
 
-.root__item{
+.root__item {
   display: flex;
   &--activ {
     position: relative;
@@ -20,13 +20,13 @@
       top: 0;
       height: 100%;
       width: 3px;
-      background: $white
+      background: $white;
     }
   }
 }
 
-.root__link{
-  padding: 10px 35px;
- width: 100%;
+.root__link {
+  padding: 15px 35px;
+  width: 100%;
   @include link;
 }

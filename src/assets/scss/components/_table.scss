@@ -1,47 +1,162 @@
 .table {
   background: $grey;
-  padding: 20px 10px;
-  border-radius: 5px;
+  padding: 20px 40px 40px 20px;
+  border-radius: 10px;
   display: inline-flex;
   flex-direction: column;
 }
 
-.table__body{
+.table__body {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.table__line{
-  display: grid;
-  grid-template-columns: 75px 250px 140px 170px;
-  width: 100%;
+.table__head {
+  margin-bottom: 20px;
+  th {
+    font-weight: 400;
+    @include line-bottom;
+  }
 }
 
-.table__data{
+.table__line {
+  display: grid;
+  grid-template-columns: 75px 315px 180px 250px;
+  width: 100%;
+  @include line-bottom;
+
+}
+
+.table__data {
   display: inline-flex;
   align-items: center;
   gap: 20px;
 }
 
-.table__image{
-  border-radius: 15px;
-  width: 40px;
-  height: 25px;
+.table__data--number{
+  font-size: 12px;
 }
 
-.table__button{
-  @include button-red;
-  padding: 5px 35px 5px 20px;
+.table__data--name{
+  font-weight: 500;
+}
+
+.table__status{
   position: relative;
+  padding-left: 10px;
+ 
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 3px;
+    height: 3px;
+    background: tomato;
+    border-radius: 50%;
+  }
+  
+  &--activ {
+    &::before {
+      background: $green;
+    }
+  }
+
+  &--suspended {
+    &::before {
+      background: $yellow;
+    }
+  }
+
+  &--delete {
+    &::before {
+      background: $red;
+    }
+  }
 }
 
-.table__icon--button{
+.table__image {
+  border-radius: 15px !important;
+  width: 40px !important;
+  height: 25px !important;
+  transform: none !important;
+  object-fit: cover;
+
+  &--hidden {
+    display: none !important;
+  }
+}
+
+.table__button {
+  @include button-red;
+  padding: 10px 35px 10px 20px;
+  position: relative;
+  margin-left: auto;
+  font-size: 12px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translate(0, -50%);
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+    background: $white;
+  }
+}
+
+.table__icon--button {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 8px;
   transform: translate(0, -50%);
-  width: 17px !important;
-  height: 17px !important;
+  width: 20px !important;
+  height: 20px !important;
   color: $red;
+}
+
+.table__menu{
+  .MuiPaper-root {
+    border-radius: 10px;
+    padding: 10px;
+    background: $activ;
+    color: $white;
+  }
+  ul {
+    @include reset-list;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.table__item-menu{
+  padding: 0 !important;
+  padding-left: 30px !important;
+  padding-right: 50px !important;
+  position: relative;
+  font-size: 12px !important;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border: 2px solid $white;
+    border-radius: 3px;
+  }
+
+  &--activ{
+    &::before {
+      background: $red;
+      border-color: $red;
+    }
+  }
 }
